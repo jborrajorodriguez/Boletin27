@@ -1,5 +1,7 @@
 package boletin.pkg27;
 
+import GUI.Ventana;
+
 
 /**
  *
@@ -9,7 +11,8 @@ public class Boletin27 {
 
     
     public static void main(String[] args) {
-        // TODO code application logic here
+        Ventana nueva=new Ventana();
+        
     }
 
 }
