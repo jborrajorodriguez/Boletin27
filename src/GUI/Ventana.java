@@ -5,20 +5,23 @@
  */
 package GUI;
 
+import boletin.pkg27.Funciones;
+
 /**
  *
  * @author Clase
  */
 public class Ventana extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Ventana
-     */
+    boolean suma, resta, multi, div;
+    public static String calc = "";
+
     public Ventana() {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        
+        this.setTitle("Calculadora Boletin 27");
+
     }
 
     /**
@@ -49,69 +52,122 @@ public class Ventana extends javax.swing.JFrame {
         jBDivi = new javax.swing.JButton();
         jBDeci = new javax.swing.JButton();
         jBBorrar = new javax.swing.JButton();
+        jB0 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel.setBackground(new java.awt.Color(153, 153, 153));
+
+        jText1.setEditable(false);
 
         jB1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB1.setText("1");
         jB1.setMaximumSize(new java.awt.Dimension(100, 80));
         jB1.setMinimumSize(new java.awt.Dimension(100, 80));
         jB1.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB1ActionPerformed(evt);
+            }
+        });
 
         jB2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB2.setText("2");
         jB2.setMaximumSize(new java.awt.Dimension(100, 80));
         jB2.setMinimumSize(new java.awt.Dimension(100, 80));
         jB2.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB2ActionPerformed(evt);
+            }
+        });
 
         jB3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB3.setText("3");
         jB3.setMaximumSize(new java.awt.Dimension(100, 80));
         jB3.setMinimumSize(new java.awt.Dimension(100, 80));
         jB3.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB3ActionPerformed(evt);
+            }
+        });
 
         jB4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB4.setText("4");
         jB4.setMaximumSize(new java.awt.Dimension(100, 80));
         jB4.setMinimumSize(new java.awt.Dimension(100, 80));
         jB4.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB4ActionPerformed(evt);
+            }
+        });
 
         jB5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB5.setText("5");
         jB5.setMaximumSize(new java.awt.Dimension(100, 80));
         jB5.setMinimumSize(new java.awt.Dimension(100, 80));
         jB5.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB5ActionPerformed(evt);
+            }
+        });
 
         jB6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB6.setText("6");
         jB6.setMaximumSize(new java.awt.Dimension(100, 80));
         jB6.setMinimumSize(new java.awt.Dimension(100, 80));
         jB6.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB6ActionPerformed(evt);
+            }
+        });
 
         jB7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB7.setText("7");
         jB7.setMaximumSize(new java.awt.Dimension(100, 80));
         jB7.setMinimumSize(new java.awt.Dimension(100, 80));
         jB7.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB7ActionPerformed(evt);
+            }
+        });
 
         jB8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB8.setText("8");
         jB8.setMaximumSize(new java.awt.Dimension(100, 80));
         jB8.setMinimumSize(new java.awt.Dimension(100, 80));
         jB8.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB8ActionPerformed(evt);
+            }
+        });
 
         jB9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jB9.setText("9");
         jB9.setMaximumSize(new java.awt.Dimension(100, 80));
         jB9.setMinimumSize(new java.awt.Dimension(100, 80));
         jB9.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB9ActionPerformed(evt);
+            }
+        });
 
         panel2.setBackground(new java.awt.Color(153, 153, 153));
 
         jBSuma.setText("+");
         jBSuma.setPreferredSize(new java.awt.Dimension(100, 70));
+        jBSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSumaActionPerformed(evt);
+            }
+        });
 
         jBigual.setText("=");
         jBigual.setPreferredSize(new java.awt.Dimension(43, 23));
@@ -123,18 +179,43 @@ public class Ventana extends javax.swing.JFrame {
 
         jBResta.setText("-");
         jBResta.setPreferredSize(new java.awt.Dimension(100, 70));
+        jBResta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBRestaActionPerformed(evt);
+            }
+        });
 
         jBMulti.setText("x");
         jBMulti.setPreferredSize(new java.awt.Dimension(100, 70));
+        jBMulti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMultiActionPerformed(evt);
+            }
+        });
 
         jBDivi.setText("/");
         jBDivi.setPreferredSize(new java.awt.Dimension(100, 70));
+        jBDivi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBDiviActionPerformed(evt);
+            }
+        });
 
         jBDeci.setText(",");
         jBDeci.setPreferredSize(new java.awt.Dimension(100, 70));
+        jBDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBDeciActionPerformed(evt);
+            }
+        });
 
         jBBorrar.setText("AC");
         jBBorrar.setPreferredSize(new java.awt.Dimension(100, 70));
+        jBBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBorrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -181,6 +262,17 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jB0.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jB0.setText("0");
+        jB0.setMaximumSize(new java.awt.Dimension(100, 80));
+        jB0.setMinimumSize(new java.awt.Dimension(100, 80));
+        jB0.setPreferredSize(new java.awt.Dimension(130, 100));
+        jB0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB0ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
@@ -197,7 +289,9 @@ public class Ventana extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jB5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelLayout.createSequentialGroup()
-                        .addComponent(jB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jB0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
                         .addComponent(jB2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(36, 36, 36)
@@ -235,7 +329,9 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(jB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jB2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(165, 165, 165))
+                        .addGap(28, 28, 28)
+                        .addComponent(jB0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -257,8 +353,142 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBigualActionPerformed
-        // TODO add your handling code here:
+
+        if (suma == true) {
+            calc = Funciones.suma2(calc);
+            jText1.setText(calc);
+            
+            
+        }else if (resta==true) {
+            calc=Funciones.resta(calc);
+            jText1.setText(calc);
+            
+        }
+        else if (multi==true) {
+            calc=Funciones.multi(calc);
+            jText1.setText(calc);
+            
+        }
+        else if(div==true){
+            calc=Funciones.div(calc);
+            jText1.setText(calc);
+        }
+
+        
+        jBSuma.setEnabled(true);
+        jBDivi.setEnabled(true);
+        jBMulti.setEnabled(true);
+        jBResta.setEnabled(true);
+        suma=resta=multi=div=false;
     }//GEN-LAST:event_jBigualActionPerformed
+
+    private void jB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB1ActionPerformed
+        calc = calc + "1";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB1ActionPerformed
+
+    private void jB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2ActionPerformed
+        calc = calc + "2";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB2ActionPerformed
+
+    private void jB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3ActionPerformed
+        calc = calc + "3";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB3ActionPerformed
+
+    private void jB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4ActionPerformed
+        calc = calc + "4";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB4ActionPerformed
+
+    private void jB5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB5ActionPerformed
+        calc = calc + "5";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB5ActionPerformed
+
+    private void jB6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB6ActionPerformed
+        calc = calc + "6";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB6ActionPerformed
+
+    private void jB7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB7ActionPerformed
+        calc = calc + "7";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB7ActionPerformed
+
+    private void jB8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB8ActionPerformed
+        calc = calc + "8";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB8ActionPerformed
+
+    private void jB9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB9ActionPerformed
+        calc = calc + "9";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB9ActionPerformed
+
+    private void jBSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSumaActionPerformed
+        calc = calc + "+";
+        suma = true;
+        jText1.setText(calc);
+        jBDivi.setEnabled(false);
+        jBMulti.setEnabled(false);
+        jBResta.setEnabled(false);
+        jBDeci.setEnabled(true);
+
+    }//GEN-LAST:event_jBSumaActionPerformed
+
+    private void jBRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRestaActionPerformed
+        calc = calc + "-";
+        resta = true;
+        jText1.setText(calc);
+        jBDivi.setEnabled(false);
+        jBMulti.setEnabled(false);
+        jBSuma.setEnabled(false);
+        jBDeci.setEnabled(true);
+
+    }//GEN-LAST:event_jBRestaActionPerformed
+
+    private void jBMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMultiActionPerformed
+        multi=true;
+        calc = calc + "*";
+        jText1.setText(calc);
+        jBDeci.setEnabled(true);
+        jBDivi.setEnabled(false);
+        jBMulti.setEnabled(false);
+        jBSuma.setEnabled(false);
+        jBResta.setEnabled(false);
+        
+    }//GEN-LAST:event_jBMultiActionPerformed
+
+    private void jBDiviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDiviActionPerformed
+        div=true;
+        calc = calc + "/";
+        jText1.setText(calc);
+        jBDeci.setEnabled(true);
+        jBDivi.setEnabled(false);
+        jBMulti.setEnabled(false);
+        jBSuma.setEnabled(false);
+        jBResta.setEnabled(false);
+        
+    }//GEN-LAST:event_jBDiviActionPerformed
+
+    private void jBDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDeciActionPerformed
+        calc = calc + ".";
+        jText1.setText(calc);
+        jBDeci.setEnabled(false);
+    }//GEN-LAST:event_jBDeciActionPerformed
+
+    private void jBBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBorrarActionPerformed
+        calc = "";
+        jText1.setText(calc);
+        jBDeci.setEnabled(true);
+    }//GEN-LAST:event_jBBorrarActionPerformed
+
+    private void jB0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB0ActionPerformed
+        calc = calc + "0";
+        jText1.setText(calc);
+    }//GEN-LAST:event_jB0ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +526,7 @@ public class Ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jB0;
     private javax.swing.JButton jB1;
     private javax.swing.JButton jB2;
     private javax.swing.JButton jB3;
